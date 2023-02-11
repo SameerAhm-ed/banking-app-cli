@@ -11,7 +11,12 @@ public class Main {
 //        acc.debit(sc.nextDouble());
 //        System.out.println(acc.getBalance());
 
-        SavingsAccount sv = new SavingsAccount(800, 5);
-        sv.calculateInterest();
+//        SavingsAccount sv = new SavingsAccount(800, 5);
+//        sv.calculateInterest();
+
+        CheckingAccount ck = new CheckingAccount(800, 5);
+        ck.debit(500);
+        System.out.println(ck.getBalance());
+
     }
 }

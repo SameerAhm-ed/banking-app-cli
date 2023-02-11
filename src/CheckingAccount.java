@@ -15,9 +15,9 @@ public class CheckingAccount extends Account {
     @Override
     public double debit(double amt) {
         if (accountBalance >= amt) {
-            double feePerTransaction = 2;
-
-            return accountBalance -= amt;
+            double afterFeeAndWithdraw = accountBalance - amt - feeChargedPerTransaction;
+            accountBalance = afterFeeAndWithdraw;
+            return accountBalance;
         } else {
             System.out.println("Debit amount exceeded account balance");
         }
