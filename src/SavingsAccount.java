@@ -13,8 +13,7 @@ public class SavingsAccount extends Account {
         System.out.println("Interest Calculation: " + intCal);
         double add = accountBalance + intCal;
         System.out.println("Balance After interest Add: " + add);
-        accountBalance = add;
-        return accountBalance;
+        return credit(add);
     }
 
     @Override
