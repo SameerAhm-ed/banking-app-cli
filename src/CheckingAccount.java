@@ -1,26 +1,22 @@
-import java.util.Scanner;
+public class CheckingAccount extends Account {
 
-public class Account implements IAccount{
-    protected double accountBalance;
-
-    public Account(double balance) {
+    double feeChargedPerTransaction;
+    public CheckingAccount(double balance, double feeAmt) {
+        super(balance);
         this.accountBalance = balance;
-
-        if (accountBalance <= 0.0) {
-            System.out.println("Initial Balance was invalid");
-        } else {
-            accountBalance = 0.0;
-        }
+        this.feeChargedPerTransaction = feeAmt;
     }
 
     @Override
     public double credit(double amt) {
-        return accountBalance += amt;
+        return super.credit(amt);
     }
 
     @Override
     public double debit(double amt) {
         if (accountBalance >= amt) {
+            double feePerTransaction = 2;
+
             return accountBalance -= amt;
         } else {
             System.out.println("Debit amount exceeded account balance");
@@ -30,6 +26,6 @@ public class Account implements IAccount{
 
     @Override
     public double getBalance() {
-        return accountBalance;
+        return super.getBalance();
     }
 }
