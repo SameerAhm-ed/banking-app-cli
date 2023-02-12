@@ -4,12 +4,12 @@ public class Account implements IAccount{
     protected double accountBalance;
 
     public Account(double balance) {
-        this.accountBalance = balance;
 
-        if (accountBalance <= 0.0) {
+        if (accountBalance < 0.0) {
             System.out.println("Initial Balance was invalid");
-        } else {
             accountBalance = 0.0;
+        } else {
+            this.accountBalance = balance;
         }
     }
 
